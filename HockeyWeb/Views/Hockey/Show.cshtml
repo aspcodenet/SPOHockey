@@ -1,8 +1,16 @@
-﻿@{
+﻿@model HockeyWeb.Models.Player
+
+@{
     ViewBag.Title = "Visa hockeyspelare";
 }
 
-Du tittar just nu på sidan för spelare med id 
-<b>@ViewData["HockeyPlayerId"]</b>
+Du tittar just nu på sidan för spelare med id
+<b>@Model.Id</b>
 Och namnet är
-<b>@ViewData["HockeyPlayerName"]</b>
+<b>@Model.Firstname &nbsp; @Model.Lastname</b>
+
+@section ExtraMenu
+{
+<li><a href="">@ViewData["HockeyPlayerName"]</a></li>
+    <li><a href="www.test.com">Create new hockey player</a></li>
+}
