@@ -24,7 +24,7 @@ namespace HockeyWeb.Controllers
             if (id == 1)
             {
                 t.Namn = "Djurgården";
-                t.Players.Add(GetPlayerFromDatabase(13));
+                t.Players.Add(new Player { Id = 13, Firstname = "Mats", Lastname = "Sundin" });
                 t.Players.Add(new Player { Id = 14, Firstname="Håkan", Lastname="Södergren"  });
                 return t;
             }
@@ -49,19 +49,11 @@ namespace HockeyWeb.Controllers
 
         private Player GetPlayerFromDatabase(int id)
         {
-            var p = new Player();
-            p.Id = id;
-            if(id == 13)
+            for(var t = 1; t <=3; t++)
             {
-                p.Firstname = "Mats";
-                p.Lastname = "Sundin";
-                return p;
-            }
-            if (id == 21)
-            {
-                p.Firstname = "Peter";
-                p.Lastname = "Forsberg";
-                return p;
+                var  team = GetTeamFromDatabase(t);
+                var p = team.Players.FirstOrDefault(x => x.Id == id);
+                if (p != null) return p;
             }
             return null;
         }
