@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Visa article";
+}
+
+@if (ViewBag.PageNum == 1)
+{
+    <text>
+        Detta är första sidan</text>
+}
+else
+{
+    <text>
+        Detta är @ViewBag.PageNum sidan</text>
+}
+

@@ -13,6 +13,20 @@ namespace HockeyWeb
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+
+            routes.MapRoute(
+                name: "MEDpAGEnUM",
+                url: "{controller}/{action}/{pageNum}",
+                defaults: new { controller = "Home", action = "Index" }
+            );
+
+            //routes.MapRoute(
+            //    name: "Article",
+            //    url: "Articles/Show/{pageNum}",
+            //    defaults: new { controller = "Articles",
+            //        action = "Show", id = UrlParameter.Optional }
+            //);
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
