@@ -15,9 +15,9 @@ namespace HockeyWeb
 
 
             routes.MapRoute(
-                name: "MEDpAGEnUM",
-                url: "{controller}/{action}/{pageNum}",
-                defaults: new { controller = "Home", action = "Index" }
+                name: "medPageNum",
+                url: "articles/show/{pageNum}",
+                defaults: new { controller = "Articles", action = "Show"}
             );
 
             //routes.MapRoute(
