@@ -30,6 +30,7 @@ namespace HockeyWeb.Controllers
             viewModel.Salary = player.Salary;
 
             viewModel.TeamName = team.Namn;
+            viewModel.TeamId = team.Id;
 
             return View(viewModel);
         }

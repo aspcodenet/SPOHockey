@@ -13,5 +13,13 @@ Spelaren är @Model.PositionInCleartext
 <br />
 Spelaren tjänar @Model.Salary
 <br />
-Spelar i @Model.TeamName
+Spelar i 
+
+@Html.ActionLink(
+    linkText:  Model.TeamName, 
+    actionName: "Team", 
+    controllerName: "Hockey", 
+    routeValues: new { id = Model.TeamId },
+    htmlAttributes:null)
+
 

@@ -12,5 +12,6 @@ namespace HockeyWeb.ViewModels
         public int Salary { get; set; }
         public int Id { get; set; }
         public string TeamName { get; set; }
+        public int TeamId { get; set; }
     }
 }
