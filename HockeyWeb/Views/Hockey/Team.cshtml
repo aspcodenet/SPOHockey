@@ -1,0 +1,21 @@
+﻿@model HockeyWeb.Models.Team
+
+@{
+    ViewBag.Title = "Visa team";
+}
+
+<h1>@Model.Namn</h1>
+Laget består av
+
+<table>
+    @foreach (var player in Model.Players)
+    {
+
+        <tr>
+            <td>@player.Firstname @player.Lastname</td>
+            <td>@position</td>
+            <td>@player.Salary</td>
+        </tr>
+    }
+</table>
+
