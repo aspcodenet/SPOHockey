@@ -7,15 +7,34 @@
 <h1>@Model.Namn</h1>
 Laget består av
 
-<table>
-    @foreach (var player in Model.Players)
-    {
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Position</th>
+        <th scope="col">Salary</th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var player in Model.Players)
+        {
 
-        <tr>
-            <td>@player.Firstname @player.Lastname</td>
-            <td>@player.Position</td>
-            <td>@player.Salary</td>
-        </tr>
-    }
+            <tr>
+                <td>
+                    @Html.ActionLink(
+        linkText: @player.Firstname + " " + @player.Lastname,
+        actionName: "Show",
+        controllerName: "Hockey",
+        routeValues: new { id = player.Id},
+        htmlAttributes:null)
+
+
+                    
+                </td>
+                <td>@player.Position</td>
+                <td>@player.Salary</td>
+            </tr>
+        }
+    </tbody>
 </table>
 
